@@ -37,15 +37,38 @@ function task02 () {
     }
 }
 
-// 3. Напишіть функцію randArray(k), яка заповнюватиме масив k випадковими цілими числами. Випадкові числа генеруються із діапазону 1-500.
-
+// 3. Напишіть функцію randArray(k), яка заповнюватиме масив k випадковими цілими числами.
+// Випадкові числа генеруються із діапазону 1-500.
 // Sample Output:
 // randArray(5);  // [399,310,232,379,40]
+function randArray (k) {
+    const result = [];
+    for (let i = 0; i < k; i++) {
+        result[i] = ((Math.random() * 1000) % 501).toFixed(0);
+    }
+    return result;
+}
 
-// 4. Напишіть функцію raiseToDegree(a,b), яка повертає результат піднесення числа a до степеня b. Функція працює тільки з цілими числами. Реалізувати інтерфейс введення чисел a, b з клавіатури.
+function task03 () {
+    const numberOfElements = document.getElementById('numberOfElements').value;
+    console.log(randArray(numberOfElements));
+}
 
+// 4. Напишіть функцію raiseToDegree(a,b), яка повертає результат піднесення числа a до степеня b.
+// Функція працює тільки з цілими числами. Реалізувати інтерфейс введення чисел a, b з клавіатури.
 // Sample Output:
 // raiseToDegree(3, 4);  // 81
+function raiseToDegree (a, b) {
+    return Math.pow(a, b);
+}
+
+function task04 () {
+    const number = document.getElementById('numberT04').value;
+    const power = document.getElementById('powerT04').value;
+    const result = raiseToDegree(number, power);
+
+    document.getElementById('resultT04').innerHTML = result;
+}
 
 // 5. Реалізуйте функцію – findMin(), яка повинна приймати довільну кількість числових аргументів і повертати той, який має найменше значення. Порада: для розв’язку можете скористатися спеціальним масивом arguments.
 // Sample Output:
