@@ -70,21 +70,65 @@ function task04 () {
     document.getElementById('resultT04').innerHTML = result;
 }
 
-// 5. Реалізуйте функцію – findMin(), яка повинна приймати довільну кількість числових аргументів і повертати той, який має найменше значення. Порада: для розв’язку можете скористатися спеціальним масивом arguments.
+// 5. Реалізуйте функцію – findMin(), яка повинна приймати довільну кількість числових аргументів
+// і повертати той, який має найменше значення.
+// Порада: для розв’язку можете скористатися спеціальним масивом arguments.
 // Sample Output:
 // findMin(12, 14, 4, -4, 0.2); // => -4
+function findMin () {
+    console.log(arguments);
+    console.log(Math.min(...arguments));
+}
 
-// 6. Напишіть функцію findUnique(arr), яка приймає масив arr і перевіряє на унікальність його елементи. Якщо всі елементи масиву унікальні (не мають дублів), то функція поверне true, інакше - false.
+function task05 () {
+    const numberOfElements = Math.ceil(Math.random() * 10);
+    findMin(...randArray(numberOfElements));
+}
+
+// 6. Напишіть функцію findUnique(arr), яка приймає масив arr і перевіряє на унікальність його елементи.
+// Якщо всі елементи масиву унікальні (не мають дублів), то функція поверне true, інакше - false.
 // Sample Output:
 // findUnique([1, 2, 3, 5, 3]);  // => false
 // findUnique([1, 2, 3, 5, 11]); // => true
+function findUnique (arr) {
+    console.log(arr);
+    for (let i = 0; i < arr.length; i++) {
+        const currentElement = arr[i];
 
-// 7. Напишіть функцію, яка повертає останній елемент масиву. Функція може приймати 2 параметра: 1-ий масив, 2-ий числовий параметр, що відповідає кількості 'х' останніх елементів масиву, які треба вивести.
+        for (let j = 0; j < arr.length; j++) {
+            if (j === i) {
+                continue;
+            }
+            if (arr[j] === currentElement) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
 
+function task06 () {
+    const numberOfElements = Math.ceil(Math.random() * 10);
+    console.log(findUnique(randArray(numberOfElements)));
+}
+
+// 7. Напишіть функцію, яка повертає останній елемент масиву. Функція може приймати 2 параметра: 1-ий масив,
+// 2-ий числовий параметр, що відповідає кількості 'х' останніх елементів масиву, які треба вивести.
 // Sample Output:
 // console.log(lastElem([3, 4, 10, -5]));      // -5
 // console.log(lastElem([3, 4, 10, -5],2));   // [10, -5]
 // console.log(lastElem([3, 4, 10, -5],8));   // [3, 4, 10, -5]
+function lastElement (arr, lastCount = 1) {
+    console.log(arr);
+    console.log(lastCount);
+    return arr.slice(arr.length - lastCount);
+}
+
+function task07 () {
+    const numberOfElements = Math.ceil(Math.random() * 10);
+    const numberOfLastElements = Math.ceil(Math.random() * 10 % numberOfElements);
+    console.log(lastElement(randArray(numberOfElements), numberOfLastElements));
+}
 
 // 8. Напишіть функцію, яка приймає рядок як параметр і перетворює першу букву кожного слова рядка в верхній регістр.
 
