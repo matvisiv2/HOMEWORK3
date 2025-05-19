@@ -129,13 +129,20 @@ function task07 () {
     const numberOfLastElements = Math.ceil(
         (Math.random() * 10) % numberOfElements
     );
-
     document.getElementById('countT07').innerHTML = numberOfLastElements;
-
     console.log(lastElement(randArray(numberOfElements), numberOfLastElements));
 }
 
 // 8. Напишіть функцію, яка приймає рядок як параметр і перетворює першу букву кожного слова рядка в верхній регістр.
 // Input string: 'i love java script'
 // Output string: 'I Love Java Script'
-function task08 () {}
+function task08 () {
+    const text = document.getElementById('textT08').value;
+
+    const res = text
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    console.log(res);
+    document.getElementById('resultTextT08').innerHTML = res;
+}
