@@ -126,11 +126,16 @@ function lastElement (arr, lastCount = 1) {
 
 function task07 () {
     const numberOfElements = Math.ceil(Math.random() * 10);
-    const numberOfLastElements = Math.ceil(Math.random() * 10 % numberOfElements);
+    const numberOfLastElements = Math.ceil(
+        (Math.random() * 10) % numberOfElements
+    );
+
+    document.getElementById('countT07').innerHTML = numberOfLastElements;
+
     console.log(lastElement(randArray(numberOfElements), numberOfLastElements));
 }
 
 // 8. Напишіть функцію, яка приймає рядок як параметр і перетворює першу букву кожного слова рядка в верхній регістр.
-
 // Input string: 'i love java script'
 // Output string: 'I Love Java Script'
+function task08 () {}
